@@ -13,7 +13,7 @@ find_package(Ceres REQUIRED)
 message(STATUS "OPENCV: " ${OpenCV_VERSION} " | BOOST: " ${Boost_VERSION} " | CERES: " ${Ceres_VERSION})
 
 # If we will compile with aruco support
-option(ENABLE_ARUCO_TAGS "Enable or disable aruco tag (disable if no contrib modules)" ON)
+option(ENABLE_ARUCO_TAGS "Enable or disable aruco tag (disable if no contrib modules)" OFF)
 if (NOT ENABLE_ARUCO_TAGS)
     add_definitions(-DENABLE_ARUCO_TAGS=0)
     message(WARNING "DISABLING ARUCOTAG TRACKING!")
@@ -36,7 +36,7 @@ endif()
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -fsee -fomit-frame-pointer -fno-signed-zeros -fno-math-errno -funroll-loops")
 
 # Enable debug flags (use if you want to debug in gdb)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g3 -Wall -Wuninitialized -fno-omit-frame-pointer")
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g3 -Wall -Wuninitialized -fno-omit-frame-pointer")
 
 # Find our ROS version!
 # NOTE: Default to using the ROS1 package if both are in our enviroment
