@@ -131,7 +131,7 @@ int main(int argc, char **argv) {
   //===========================================================
 
   // Calculate
-  std::vector<double> segments = {8.0, 16.0, 24.0, 32.0, 40.0};
+  std::vector<double> segments = {500.0, 750.0, 1000.0, 1250.0};
   std::map<double, std::pair<ov_eval::Statistics, ov_eval::Statistics>> error_rpe;
   traj.calculate_rpe(segments, error_rpe);
 
@@ -140,8 +140,8 @@ int main(int argc, char **argv) {
   PRINT_INFO("Relative Pose Error\n");
   PRINT_INFO("======================================\n");
   for (const auto &seg : error_rpe) {
-    PRINT_INFO("seg %d - median_ori = %.3f | median_pos = %.3f (%d samples)\n", (int)seg.first, seg.second.first.median,
-               seg.second.second.median, (int)seg.second.second.values.size());
+    PRINT_INFO("seg %d - mean_ori = %.3f | mean_pos = %.3f (%d samples)\n", (int)seg.first, seg.second.first.mean,
+               seg.second.second.mean, (int)seg.second.second.values.size());
     // PRINT_DEBUG("seg %d - std_ori  = %.3f | std_pos  = %.3f\n",(int)seg.first,seg.second.first.std,seg.second.second.std);
   }
 
