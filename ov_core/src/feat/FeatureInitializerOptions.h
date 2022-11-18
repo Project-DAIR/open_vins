@@ -60,7 +60,7 @@ struct FeatureInitializerOptions {
   double min_dist = 0.10;
 
   /// Minimum distance to accept triangulated features
-  double max_dist = 60;
+  double max_dist = 100;
 
   /// Max baseline ratio to accept triangulated features
   double max_baseline = 40;
