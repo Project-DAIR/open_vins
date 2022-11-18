@@ -1,7 +1,7 @@
 <launch>
     <node name="recorder_gpsnd" pkg="ov_eval" type="pose_to_file" output="screen">
-        <param name="topic"      type="str" value="/ov_msckf/poseimu" />
-        <param name="topic_type" type="str" value="PoseWithCovarianceStamped" />
+        <param name="topic"      type="str" value="/ov_msckf/odomimu" />
+        <param name="topic_type" type="str" value="Odometry" />
         <param name="output"     type="str" value="/home/mattbooker/data/traj_log.txt" />
     </node>
 
