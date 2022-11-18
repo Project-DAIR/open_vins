@@ -21,7 +21,7 @@ dt_slam_delay: 1 # delay before initializing (helps with stability from bad init
 
 gravity_mag: 9.81 # magnitude of gravity in this location
 
-feat_rep_msckf: "GLOBAL_3D"
+feat_rep_msckf: "ANCHORED_MSCKF_INVERSE_DEPTH"
 feat_rep_slam: "ANCHORED_MSCKF_INVERSE_DEPTH"
 feat_rep_aruco: "ANCHORED_MSCKF_INVERSE_DEPTH"
 
@@ -46,7 +46,7 @@ init_dyn_mle_opt_calib: false # if we should optimize calibration during intiali
 init_dyn_mle_max_iter: 50 # how many iterations the MLE refinement should use (zero to skip the MLE)
 init_dyn_mle_max_time: 0.05 # how many seconds the MLE should be completed in
 init_dyn_mle_max_threads: 6 # how many threads the MLE should use
-init_dyn_num_pose: 15 # number of poses to use within our window time (evenly spaced)
+init_dyn_num_pose: 11 # number of poses to use within our window time (evenly spaced)
 init_dyn_min_deg: 5.0 # orientation change needed to try to init
 
 init_dyn_inflation_ori: 10 # what to inflate the recovered q_GtoI covariance by
@@ -84,9 +84,9 @@ grid_y: 5 # extraction sub-grid count for vertical direction (uniform tracking)
 min_px_dist: 10 # distance between features (features near each other provide less information)
 knn_ratio: 0.70 # descriptor knn threshold for the top two descriptor matches
 track_frequency: 21.0 # frequency we will perform feature tracking at (in frames per second / hertz)
-downsample_cameras: true # will downsample image in half if true
+downsample_cameras: false   # will downsample image in half if true
 num_opencv_threads: -1 # -1: auto, 0-1: serial, >1: number of threads
-histogram_method: "HISTOGRAM" # NONE, HISTOGRAM, CLAHE
+histogram_method: "NONE" # NONE, HISTOGRAM, CLAHE
 
 # aruco tag tracker for the system
 # DICT_6X6_1000 from https://chev.me/arucogen/
